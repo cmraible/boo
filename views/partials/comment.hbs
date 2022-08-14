@@ -1,0 +1,30 @@
+<div class="flex-container w-100 comment-container">
+    <div style="flex: none;">
+        <a href="#">
+            <img src="/images/{{author.avatar}}" height="36px" width="36px" class="avatar" />
+        </a>
+    </div>
+    <div style="flex-grow: 8; padding: 4px;">
+        <div>
+            <a href="#" class="author-link">{{author.name}}</a> <span class="text-light middle text-small">&#183; {{formatDateRelative created}}</span>
+        </div>
+        <p class="comment-body">{{body}}</p>
+        <div class="comment-actions">
+            {{#userUpvoted this}}
+                {{#if upvoted}}
+                <div>
+                    <a href="javascript:void(0);" id="upvote-{{id}}" class="middle">Upvoted</a>
+                </div>
+                {{else}}
+                <div>
+                    <a href="javascript:void(0);" onclick="upvote({{id}})" id="upvote-{{id}}" class="middle"><span class="text-small middle">&#9650;</span> Upvote</a>
+                </div>
+                {{/if}}
+            {{/userUpvoted}}
+            
+            <div>
+                <a href="javascript:void(0);" onclick="reply()">Reply</a>
+            </div>
+        </div>
+    </div>
+</div>

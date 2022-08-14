@@ -1,0 +1,29 @@
+<h1>{{ post.title }}</h1>
+{{post.body}}
+<hr>
+
+
+<h2 class="bold" style="margin-top: 36px; margin-bottom: 36px" id="discussion">Discussion</h2>
+<form id="comment-form" action="javascript:void(0);">
+    <div class="flex-container w-100">
+        <div style="flex: none;">
+            <a href="#">
+                <img src="/images/user-{{user}}.jpeg" height="36px" width="36px" class="avatar" />
+            </a>
+        </div>
+        <div style="flex-grow: 8;">
+            <input class="w-100 grow primary" required id="comment-input" maxlength="800" name="comment" placeholder="What are your thoughts?" />
+            <input type="hidden" id="postId" value="{{post.id}}" />
+            <input type="hidden" id="userId" value="{{user}}" />
+        </div>
+        <div style="flex: none;">
+            <button type="submit" id="comment-submit" class="primary">Comment</button>
+        </div>
+    </div>
+</form>
+<hr id="comment-divider">
+{{#each post.comments}}
+    {{> 'comment' user=../user}}
+{{/each}}
+
+
