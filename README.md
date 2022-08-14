@@ -20,8 +20,12 @@ Add your MySQL connection URL to a .env file in the project root. If running MyS
 `npm test`
 ## Run development server
 `npm run start`
-## Open Cypress for interactive End to End Testing
-Note: to run Cypress tests, you need two terminal windows: one to run the app, and one to run Cypress
+## End to End Testing
+First, start your development server:
 `npm run start`
-In another terminal window/tab:
-`npm run cypress:open`
+
+Leave that running, and open a new terminal window/tab. 
+
+To run Cypress tests interactively, in another terminal run: `npm run cypress:open`. 
+
+To run the Cypress tests headlessly in your terminal, run `npm run cypress:run` instead.

@@ -9,7 +9,9 @@
     "start": "node ./bin/www",
     "test": "npm run migrate:reset && cross-env NODE_ENV=test jest --testTimeout=10000",
     "cypress:open": "npx cypress open",
-    "migrate": "npx prisma migrate",
+    "cypress:run": "npx cypress run",
+    "migrate": "npx prisma migrate dev",
+    "seed": "npx prisma db seed",
     "migrate:reset": "npx prisma migrate reset",
     "studio": "npx prisma studio"
   },
